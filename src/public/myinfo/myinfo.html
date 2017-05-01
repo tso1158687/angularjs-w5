@@ -1,0 +1,11 @@
+<div ng-if="!myinfo.reg">Not Signed Up Yet. <a ui-sref="public.signup">Sign up Now!</a></div>
+<div ng-if="myinfo.reg">
+    <div>First Name:{{myinfo.reg.user.firstname}}</div>
+    <div>Last Name:{{myinfo.reg.user.lastname}}</div>
+    <div>Email:{{myinfo.reg.user.email}}</div>
+    <div>Phone Number:{{myinfo.reg.user.phone}}</div>
+    <div>My favorite dish:
+        <br>Title:{{myinfo.reg.item.name}}
+        <br><img src="images/menu/{{myinfo.reg.item.category_short_name}}/{{myinfo.reg.item.category_short_name}}.jpg">
+        <br>Description:{{myinfo.reg.item.description}}</div>
+</div>

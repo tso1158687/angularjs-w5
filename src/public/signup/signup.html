@@ -1,0 +1,26 @@
+<fieldset>
+    <legend>註冊</legend>
+    <form name="regForm" novalidate id="regForm">
+        First Name
+        <input type="text" name="firstName" placeholder="First Name" required ng-model="signup.user.firstname"><span ng-if="regForm.firstName.$error.required && regForm.firstName.$touched">Please enter your last name</span>
+        <br> Last Name
+        <input type="text" name="lastName" placeholder="Last Name" required ng-model="signup.user.lastname"><span ng-if="regForm.lastName.$error.required && regForm.lastName.$touched">Please enter your last name</span>
+        <br> Email
+        <input type="email" name="email" placeholder="email address" required ng-model="signup.user.email"><span ng-if="regForm.email.$error.required && regForm.email.$touched">Please enter your email</span>
+        <br> Phone Number
+        <input type="text" name="phone" placeholder="phone number" required ng-model="signup.user.phone"><span ng-if="regForm.phone.$error.required && regForm.phone.$touched">Please enter your phone number</span>
+        <br> Favorite Dish
+        <input type="text" name="favorite" placeholder="favorite dish" required ng-model="signup.user.favorite"><span ng-if="regForm.favorite.$error.required && regForm.favorite.$touched">Please enter your favorite dish</span>
+        <br>
+        <button ng-disabled="regForm.$invalid" ng-click="signup.submit()" disabled="disabled">Submit</button>
+        <div style="margin-top: 10px;">
+            Form valid? {{ regForm.$valid }}
+        </div>
+    </form>
+    <div ng-if="signup.success">
+        Your information has been saved
+    </div>
+    <div ng-if="signup.fail">
+        no such menu number exist, choose another
+    </div>
+</fieldset>
